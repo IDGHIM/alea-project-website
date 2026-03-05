@@ -1,1189 +1,263 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-    
-    <link rel="stylesheet" href="styles.css">
-    <title>Aléa - Dossier Projet | Ichem DGHIM</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ALÉA — Application de Quiz Interactive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h2>Aléa</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#cahier-des-charges">Cahier des charges</a></li>
-                <li><a href="#developpement">Développement</a></li>
-                <li><a href="#resolution-problemes">Résolution de problèmes</a></li>
-                <li><a href="#conclusion">Conclusion</a></li>
-            </ul>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">AL<span>É</span>A</a>
+  <div class="nav-links">
+    <a href="#features">Fonctionnalités</a>
+    <a href="#stack">Stack</a>
+    <a href="#securite">Sécurité</a>
+    <a href="#accessibilite">Accessibilité</a>
+    <a href="#architecture">Architecture</a>
+  </div>
+  <a href="https://github.com/IDGHIM/Alea" target="_blank" class="nav-cta">GitHub →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Application de Quiz Interactive</div>
+    <h1 class="hero-title">AL<span class="r">É</span><span class="y">A</span></h1>
+    <p class="hero-sub">
+      Une plateforme full-stack <strong>moderne, sécurisée et accessible</strong> pour créer, administrer et jouer à des quiz interactifs.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/IDGHIM/Alea" target="_blank" class="btn-hero primary">⬡ Voir le code source</a>
+      <a href="#features" class="btn-hero ghost">Découvrir →</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat reveal"><div class="stat-n">React 18</div><div class="stat-l">Frontend</div></div>
+  <div class="stat reveal"><div class="stat-n">Node.js</div><div class="stat-l">Backend</div></div>
+  <div class="stat reveal"><div class="stat-n">MongoDB</div><div class="stat-l">Base de données</div></div>
+  <div class="stat reveal"><div class="stat-n">WCAG AA</div><div class="stat-l">Accessibilité</div></div>
+  <div class="stat reveal"><div class="stat-n">JWT</div><div class="stat-l">Authentification</div></div>
+</div>
+
+<!-- FEATURES -->
+<section class="features-bg" id="features">
+  <div class="container">
+    <div class="section-tag reveal">Fonctionnalités</div>
+    <h2 class="section-title reveal">Tout ce dont vous avez besoin</h2>
+    <p class="section-sub reveal">Une plateforme complète pensée pour les joueurs et les administrateurs.</p>
+    <div class="features-grid reveal">
+      <div class="feat">
+        <span class="feat-icon">🎯</span>
+        <h3>Quiz Interactifs</h3>
+        <p>Choix simple et multiple, barre de progression en temps réel, résultats détaillés avec explications question par question.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">⚙️</span>
+        <h3>Panel Admin Complet</h3>
+        <p>Dashboard, CRUD quiz et questions, duplication, publication/dépublication, gestion des utilisateurs et attribution de rôles.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🔒</span>
+        <h3>Sécurité Renforcée</h3>
+        <p>JWT httpOnly, bcrypt 10 rounds, rate limiting, CORS strict, headers HTTP sécurisés, protection XSS/CSRF.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">♿</span>
+        <h3>Accessibilité WCAG 2.1</h3>
+        <p>Menu d'accessibilité complet : contraste élevé, police Dyslexie, synthèse vocale, navigation clavier, taille de police ajustable.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">📱</span>
+        <h3>Responsive Design</h3>
+        <p>Interface adaptée mobile, tablette et desktop. Grilles flexibles, navigation tactile optimisée, breakpoints précis.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">📧</span>
+        <h3>Reset Password</h3>
+        <p>Token cryptographique SHA-256, expiration 1h, usage unique, email HTML responsive via Nodemailer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="container">
+    <div class="stack-layout">
+      <div>
+        <div class="section-tag reveal">Stack Technique</div>
+        <h2 class="section-title reveal">Full-Stack<br/>Moderne</h2>
+        <p class="section-sub reveal">Technologies éprouvées, architecture MVC claire et API REST standardisée.</p>
+        <div class="stack-badges reveal">
+          <span class="sbadge">React 18</span>
+          <span class="sbadge">Create React App</span>
+          <span class="sbadge">React Router v6</span>
+          <span class="sbadge">Axios</span>
+          <span class="sbadge">Node.js 18</span>
+          <span class="sbadge">Express 4.18</span>
+          <span class="sbadge">MongoDB Atlas</span>
+          <span class="sbadge">Mongoose 7</span>
+          <span class="sbadge">JWT</span>
+          <span class="sbadge">bcryptjs</span>
+          <span class="sbadge">Nodemailer</span>
+          <span class="sbadge">Nodemon</span>
         </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Aléa</h1>
-                <p class="hero-subtitle">Application de Quiz Interactive</p>
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <strong>Projet réalisé dans le cadre :</strong>
-                        <span>Titre Professionnel Développeur Web et Web Mobile</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>Présenté par :</strong>
-                        <span>Ichem DGHIM</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="stack-visual reveal">
+        <div class="code-dots">
+          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
         </div>
-    </header>
+        <div class="code-line"><span class="cm">// app.js — Configuration Express</span></div>
+        <div class="code-line"><span class="kw">const</span> <span class="y">app</span> = <span class="fn">require</span>(<span class="str">'express'</span>)()</div>
+        <div class="code-line">&nbsp;</div>
+        <div class="code-line"><span class="cm">// Sécurité</span></div>
+        <div class="code-line"><span class="y">app</span>.<span class="fn">use</span>(cors({ credentials: <span class="kw">true</span> }))</div>
+        <div class="code-line"><span class="y">app</span>.<span class="fn">use</span>(cookieParser())</div>
+        <div class="code-line"><span class="y">app</span>.<span class="fn">use</span>(rateLimiter)</div>
+        <div class="code-line">&nbsp;</div>
+        <div class="code-line"><span class="cm">// Routes API REST</span></div>
+        <div class="code-line"><span class="y">app</span>.<span class="fn">use</span>(<span class="str">'/api/auth'</span>, authRoutes)</div>
+        <div class="code-line"><span class="y">app</span>.<span class="fn">use</span>(<span class="str">'/api/quiz'</span>, quizRoutes)</div>
+        <div class="code-line"><span class="y">app</span>.<span class="fn">use</span>(<span class="str">'/api/questions'</span>, questionRoutes)</div>
+        <div class="code-line"><span class="y">app</span>.<span class="fn">use</span>(<span class="str">'/api/users'</span>, userRoutes)</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Table des matières -->
-    <section class="toc">
-        <div class="container">
-            <h2>Sommaire</h2>
-            <div class="toc-grid">
-                <div class="toc-section">
-                    <h3>1. Introduction</h3>
-                    <ul>
-                        <li><a href="#introduction">Présentation du développeur</a></li>
-                        <li><a href="#concept-alea">Concept Aléa</a></li>
-                    </ul>
-                </div>
-                <div class="toc-section">
-                    <h3>2. Cahier des charges</h3>
-                    <ul>
-                        <li><a href="#contexte">Contexte du projet</a></li>
-                        <li><a href="#objectifs">Objectifs</a></li>
-                        <li><a href="#perimetre">Périmètre fonctionnel</a></li>
-                        <li><a href="#contraintes">Contraintes</a></li>
-                        <li><a href="#livrables">Livrables attendus</a></li>
-                    </ul>
-                </div>
-                <div class="toc-section">
-                    <h3>3. Développement</h3>
-                    <ul>
-                        <li><a href="#dev-global">Développement global</a></li>
-                        <li><a href="#dev-front">Développement Front-end</a></li>
-                        <li><a href="#dev-back">Développement Back-end</a></li>
-                        <li><a href="#gestion">Gestion & Organisation</a></li>
-                    </ul>
-                </div>
-                <div class="toc-section">
-                    <h3>4. Résolution de problèmes</h3>
-                    <ul>
-                        <li><a href="#probleme-1">Protection des routes admin</a></li>
-                        <li><a href="#probleme-2">Sécurité des tokens</a></li>
-                        <li><a href="#resume">Résumé des solutions</a></li>
-                    </ul>
-                </div>
-                <div class="toc-section">
-                    <h3>5. Conclusion</h3>
-                    <ul>
-                        <li><a href="#bilan">Bilan du développement</a></li>
-                        <li><a href="#points-forts">Points forts</a></li>
-                        <li><a href="#evolutions">Évolutions</a></li>
-                    </ul>
-                </div>
-            </div>
+<!-- SECURITY -->
+<section class="security-bg" id="securite">
+  <div class="container">
+    <div class="section-tag reveal">Sécurité</div>
+    <h2 class="section-title reveal">Protection<br/>Multi-Niveaux</h2>
+    <p class="section-sub reveal">Chaque couche de l'application est sécurisée selon les standards OWASP.</p>
+    <div class="security-grid reveal">
+      <div class="sec-card">
+        <div class="sec-icon">🍪</div>
+        <div><h4>JWT httpOnly Cookies</h4><p>Token stocké en cookie httpOnly, secure, sameSite:strict. Inaccessible depuis JavaScript, protection CSRF native.</p></div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">🔑</div>
+        <div><h4>bcrypt — 10 rounds</h4><p>Hashage irréversible des mots de passe. Impossible de retrouver le mot de passe en clair même en cas de fuite de base de données.</p></div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">⏱️</div>
+        <div><h4>Rate Limiting</h4><p>100 req/15min global. 10 req/15min sur les routes d'authentification pour bloquer les attaques brute force.</p></div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">🔐</div>
+        <div><h4>Reset Token SHA-256</h4><p>crypto.randomBytes(32) + hashage SHA-256 + expiration 1h + usage unique. Token brut jamais stocké en base.</p></div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">🛡️</div>
+        <div><h4>Headers HTTP</h4><p>X-Content-Type-Options, X-Frame-Options:DENY, X-XSS-Protection, Content-Security-Policy, Referrer-Policy.</p></div>
+      </div>
+      <div class="sec-card">
+        <div class="sec-icon">✅</div>
+        <div><h4>Validation Stricte</h4><p>Vérification ObjectId MongoDB, sanitization des entrées, énumérations Mongoose, limitation payload 10MB.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSIBILITY -->
+<section id="accessibilite">
+  <div class="container">
+    <div class="a11y-layout">
+      <div>
+        <div class="section-tag reveal">Accessibilité</div>
+        <h2 class="section-title reveal">Inclusive<br/>par Design</h2>
+        <p class="section-sub reveal">Conformité WCAG 2.1 niveau AA. Un menu d'accessibilité flottant offre une expérience adaptée à chaque utilisateur.</p>
+        <div class="wcag-badge reveal">✓ Conforme WCAG 2.1 — Niveau AA</div>
+      </div>
+      <div class="a11y-list reveal">
+        <div class="a11y-item"><div class="a11y-dot"></div><span>Contraste élevé</span><small>Malvoyants</small></div>
+        <div class="a11y-item"><div class="a11y-dot"></div><span>Police Dyslexie</span><small>Dyslexiques</small></div>
+        <div class="a11y-item"><div class="a11y-dot"></div><span>Taille de police</span><small>70% → 200%</small></div>
+        <div class="a11y-item"><div class="a11y-dot"></div><span>Synthèse vocale</span><small>Web Speech API</small></div>
+        <div class="a11y-item"><div class="a11y-dot"></div><span>Navigation clavier</span><small>Tab + Enter</small></div>
+        <div class="a11y-item"><div class="a11y-dot"></div><span>Réduction animations</span><small>Épilepsie</small></div>
+        <div class="a11y-item"><div class="a11y-dot"></div><span>Liens renforcés</span><small>Lisibilité</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="security-bg" id="architecture">
+  <div class="container">
+    <div class="section-tag reveal">Architecture</div>
+    <h2 class="section-title reveal">Client — Serveur — Base de données</h2>
+    <p class="section-sub reveal">Architecture MVC claire avec séparation stricte des responsabilités.</p>
+    <div class="arch-diagram reveal">
+      <div class="arch-row">
+        <div class="arch-box client">React CRA :3000</div>
+      </div>
+      <div class="arch-label">Axios + Cookie JWT httpOnly</div>
+      <div class="arch-row"><div class="arch-arrow">↕</div></div>
+      <div class="arch-row">
+        <div class="arch-box server">Express API :3001</div>
+      </div>
+      <div class="arch-label">Middlewares de sécurité</div>
+      <div class="arch-row">
+        <div class="arch-group">
+          <div class="arch-box mw">protect (JWT)</div>
+          <div class="arch-box mw">authorize (rôle)</div>
+          <div class="arch-box mw">rateLimiter</div>
+          <div class="arch-box mw">errorHandler</div>
         </div>
-    </section>
+      </div>
+      <div class="arch-label">Contrôleurs → Modèles Mongoose</div>
+      <div class="arch-row"><div class="arch-arrow">↕</div></div>
+      <div class="arch-row">
+        <div class="arch-box db">MongoDB Atlas</div>
+      </div>
+      <div class="arch-label" style="margin-top:.5rem">Collections : Users · Quiz · Questions</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Introduction -->
-    <section id="introduction" class="section">
-        <div class="container">
-            <h2>Introduction</h2>
-            <div class="content-grid">
-                <div class="profile-card">
-                    <h3>Profil du développeur</h3>
-                    <p>Je suis un développeur web junior de 20 ans, passionné par l'univers du développement et de la création numérique. Diplômé d'un bac STI2D spécialité SIN et actuellement basé à Agen, je me spécialise dans la conception de sites modernes, performants et entièrement responsives.</p>
-                    
-                    <div class="skills">
-                        <h4>Compétences techniques</h4>
-                        <div class="tech-stack">
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Mongoose</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-origin">
-                    <h3 id="concept-alea">Concept Aléa</h3>
-                    <p>Le projet que je présente s'inscrit dans une démarche d'apprentissage et de mise en pratique. Il s'agit du développement d'une application de quiz, initialement pensée pour le domaine du powerlifting, puis évoluée vers un modèle plus ambitieux : une plateforme en marque blanche, modulable et personnalisable.</p>
-                    
-                    <div class="name-origin">
-                        <h4>Origine du nom</h4>
-                        <p>Le nom "Aléa" est inspiré de l'expression latine "Alea iacta est" (le dé est jeté). Ce nom symbolise à la fois le jeu et la prise de décision. Le dé illustre l'incertitude et le défi, éléments centraux dans un quiz où chaque question met en jeu la réflexion, l'intuition et parfois la chance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <p class="section-tag reveal" style="justify-content:center;display:flex">Open Source</p>
+    <h2 class="cta-title reveal">Prêt à explorer<br/>le code ?</h2>
+    <p class="cta-sub reveal">Le projet complet est disponible sur GitHub — React, Node.js, MongoDB, JWT.</p>
+    <div class="reveal">
+      <a href="https://github.com/IDGHIM/Alea" target="_blank" class="btn-hero primary">⬡ GitHub — IDGHIM/Alea</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Cahier des charges -->
-    <section id="cahier-des-charges" class="section bg-alternate">
-        <div class="container">
-            <h2>Cahier des charges</h2>
-            
-            <div id="contexte" class="subsection">
-                <h3>Contexte du projet</h3>
-                <p>L'application vise à offrir une plateforme interactive, moderne et accessible, pensée pour répondre aux besoins des utilisateurs et des administrateurs. Chaque utilisateur peut s'inscrire, se connecter en sécurité, personnaliser son profil et accéder à des quiz conçus pour allier apprentissage et divertissement.</p>
-            </div>
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">AL<span>É</span>A</span>
+  <p>Réalisé par <strong>Ichem DGHIM</strong> dans le cadre du Titre Professionnel <strong>Développeur Web et Web Mobile</strong></p>
+  <p style="margin-top:.4rem">AFEC — Agen — Session 2025</p>
+  <p style="margin-top:1.5rem;font-size:.75rem;opacity:.4">© 2025 Ichem DGHIM — Tous droits réservés</p>
+</footer>
 
-            <div id="objectifs" class="subsection">
-                <h3>Objectifs</h3>
-                <ul class="objectives-list">
-                    <li>Offrir une expérience utilisateur fluide avec React et React Router</li>
-                    <li>Intégrer des mécanismes robustes d'authentification et de gestion des rôles</li>
-                    <li>Porter une attention particulière à l'accessibilité</li>
-                    <li>Adopter une architecture modulaire et évolutive</li>
-                </ul>
-            </div>
-
-            <div id="perimetre" class="subsection">
-                <h3>Périmètre fonctionnel</h3>
-                
-                <div class="features-grid">
-                    <div class="feature-category">
-                        <div class="category-header public">
-                            <span class="icon">🔓</span>
-                            <h4>Fonctionnalités accessibles à tous</h4>
-                        </div>
-                        <ul>
-                            <li>Page d'accueil avec présentation du site</li>
-                            <li>Accès aux quiz en mode visiteur</li>
-                            <li>Mentions légales et licence consultables</li>
-                            <li>Formulaire de contact</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-category">
-                        <div class="category-header auth">
-                            <span class="icon">🔑</span>
-                            <h4>Fonctionnalités liées à l'authentification</h4>
-                        </div>
-                        <ul>
-                            <li>Inscription avec confirmation par mail</li>
-                            <li>Connexion sécurisée</li>
-                            <li>Réinitialisation du mot de passe via mail (token)</li>
-                            <li>Vérification d'adresse mail</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-category">
-                        <div class="category-header user">
-                            <span class="icon">🔒</span>
-                            <h4>Fonctionnalités réservées aux utilisateurs connectés</h4>
-                        </div>
-                        <ul>
-                            <li>Accès à un profil personnalisé</li>
-                            <li>Historique des quiz</li>
-                            <li>Suivi des performances</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-category">
-                        <div class="category-header admin">
-                            <span class="icon">🛡️</span>
-                            <h4>Fonctionnalités réservées aux administrateurs</h4>
-                        </div>
-                        <ul>
-                            <li>Accès à un panneau d'administration</li>
-                            <li>Gestion des utilisateurs et des contenus</li>
-                            <li>Création et modification de quiz</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="error-handling">
-                    <div class="category-header error">
-                        <span class="icon">❌</span>
-                        <h4>Gestion des erreurs</h4>
-                    </div>
-                    <p>Page 404 personnalisée avec options de retour</p>
-                </div>
-            </div>
-
-            <div id="contraintes" class="subsection">
-                <h3>Contraintes</h3>
-                
-                <div class="constraints-grid">
-                    <div class="constraint-card">
-                        <h4>Contraintes techniques</h4>
-                        <ul>
-                            <li>Front-end développé en React avec React Router DOM</li>
-                            <li>Composant ProtectedRoute pour la gestion des accès</li>
-                            <li>AccessibilityMenu intégré dès la conception</li>
-                            <li>Design responsive sur tous supports</li>
-                            <li>Communication via API REST</li>
-                        </ul>
-                    </div>
-
-                    <div class="constraint-card">
-                        <h4>Contraintes de sécurité</h4>
-                        <ul>
-                            <li>Hachage des mots de passe côté back-end</li>
-                            <li>Contrôles d'authentification stricts</li>
-                            <li>Vérification des rôles (user, admin)</li>
-                            <li>Protection des données sensibles</li>
-                        </ul>
-                    </div>
-
-                    <div class="constraint-card">
-                        <h4>Contraintes légales</h4>
-                        <ul>
-                            <li>Conformité RGPD</li>
-                            <li>Page mentions légales intégrée</li>
-                            <li>Transparence sur les conditions d'utilisation</li>
-                            <li>Gestion des droits utilisateurs</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div id="livrables" class="subsection">
-                <h3>Livrables attendus</h3>
-                <div class="deliverables">
-                    <div class="deliverable-item">
-                        <h4>Code source complet</h4>
-                        <p>Front-end développé en React avec clarté et maintenabilité</p>
-                    </div>
-                    <div class="deliverable-item">
-                        <h4>Documentation</h4>
-                        <p>Documentation technique et utilisateur complète</p>
-                    </div>
-                    <div class="deliverable-item">
-                        <h4>Tests</h4>
-                        <p>Cahier de tests unitaires et fonctionnels</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Développement Global -->
-    <section id="developpement" class="section">
-        <div class="container">
-            <h2>Développement</h2>
-            
-            <div id="dev-global" class="subsection">
-                <h3>Développement Global</h3>
-                
-                <div class="tech-overview">
-                    <h4>Technologies utilisées</h4>
-                    <div class="tech-categories">
-                        <div class="tech-category">
-                            <h5>Front-end</h5>
-                            <ul>
-                                <li>React & JavaScript</li>
-                                <li>React Router</li>
-                                <li>Axios pour les appels API</li>
-                            </ul>
-                        </div>
-                        <div class="tech-category">
-                            <h5>Back-end</h5>
-                            <ul>
-                                <li>Node.js & Express</li>
-                                <li>MongoDB avec Mongoose</li>
-                                <li>JWT pour l'authentification</li>
-                            </ul>
-                        </div>
-                        <div class="tech-category">
-                            <h5>Outils</h5>
-                            <ul>
-                                <li>Docker (optionnel)</li>
-                                <li>ESLint & Prettier</li>
-                                <li>Git pour le versioning</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="architecture-overview">
-                    <h4>Organisation du code</h4>
-                    
-                    <div class="architecture-section">
-                        <h5>Client (Front-end)</h5>
-                        <div class="folder-structure">
-                            <ul class="folder-tree">
-                                <li>📁 public/ <span>- fichiers statiques</span></li>
-                                <li>📁 src/
-                                    <ul>
-                                        <li>📁 assets/ <span>- ressources graphiques</span></li>
-                                        <li>📁 components/ <span>- composants réutilisables</span></li>
-                                        <li>📁 features/ <span>- modules fonctionnels</span></li>
-                                        <li>📁 pages/ <span>- pages principales</span></li>
-                                        <li>📁 services/ <span>- appels API</span></li>
-                                        <li>📁 utils/ <span>- fonctions utilitaires</span></li>
-                                        <li>📄 App.jsx</li>
-                                        <li>📄 index.jsx</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="architecture-section">
-                        <h5>Server (Back-end)</h5>
-                        <div class="folder-structure">
-                            <ul class="folder-tree">
-                                <li>📁 controllers/ <span>- logique métier</span></li>
-                                <li>📁 models/ <span>- schémas de données</span></li>
-                                <li>📁 routes/ <span>- endpoints API</span></li>
-                                <li>📁 middleware/ <span>- sécurité et gestion erreurs</span></li>
-                                <li>📁 services/ <span>- logique applicative</span></li>
-                                <li>📁 utils/ <span>- utilitaires génériques</span></li>
-                                <li>📄 app.js <span>- configuration Express</span></li>
-                                <li>📄 server.js <span>- point d'entrée serveur</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Développement Front-end -->
-            <div id="dev-front" class="subsection">
-                <h3>Développement Front-end</h3>
-                
-                <div class="component-showcase">
-                    <div class="component-card">
-                        <h4>📑 Navbar.jsx</h4>
-                        <div class="component-details">
-                            <div class="component-role">
-                                <h5>Rôle</h5>
-                                <p>Élément central de navigation présent sur toutes les pages, s'adaptant selon le statut de connexion et le rôle de l'utilisateur.</p>
-                            </div>
-                            
-                            <div class="component-features">
-                                <h5>Fonctionnement</h5>
-                                <ul>
-                                    <li>Vérification automatique de l'authentification via /api/me</li>
-                                    <li>Rafraîchissement toutes les 5 minutes</li>
-                                    <li>Déconnexion sécurisée avec redirection</li>
-                                </ul>
-                            </div>
-
-                            <div class="navigation-table">
-                                <h5>Navigation par rôle</h5>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Fonctionnalité</th>
-                                            <th>Visiteur</th>
-                                            <th>Utilisateur</th>
-                                            <th>Administrateur</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Accueil</td>
-                                            <td class="access-yes">✅</td>
-                                            <td class="access-yes">✅</td>
-                                            <td class="access-yes">✅</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Inscription/Connexion</td>
-                                            <td class="access-yes">✅</td>
-                                            <td class="access-no">❌</td>
-                                            <td class="access-no">❌</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Quiz</td>
-                                            <td class="access-no">❌</td>
-                                            <td class="access-yes">✅</td>
-                                            <td class="access-yes">✅</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Profil</td>
-                                            <td class="access-no">❌</td>
-                                            <td class="access-yes">✅</td>
-                                            <td class="access-yes">✅</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Administration</td>
-                                            <td class="access-no">❌</td>
-                                            <td class="access-no">❌</td>
-                                            <td class="access-yes">✅</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="component-card highlight">
-                        <h4>📑 AccessibilityMenu.jsx</h4>
-                        <div class="component-details">
-                            <div class="component-role">
-                                <h5>Rôle</h5>
-                                <p>Pilier différenciant de l'application, visant à rendre la plateforme inclusive et conforme aux normes d'accessibilité WCAG 2.1.</p>
-                            </div>
-
-                            <div class="accessibility-stats">
-                                <h5>Statistiques sur l'accessibilité web</h5>
-                                <div class="stats-grid">
-                                    <div class="stat-item">
-                                        <span class="stat-number">1,6 milliards</span>
-                                        <span class="stat-label">de personnes avec un handicap dans le monde</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">94%</span>
-                                        <span class="stat-label">des sites européens non accessibles</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">3-4%</span>
-                                        <span class="stat-label">des sites privés français accessibles</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accessibility-features">
-                                <h5>Fonctionnalités détaillées</h5>
-                                <div class="features-categories">
-                                    <div class="feature-group">
-                                        <h6>👀 Vision</h6>
-                                        <ul>
-                                            <li>Mode contraste élevé</li>
-                                            <li>Mode sombre/clair</li>
-                                            <li>Filtres daltonisme</li>
-                                            <li>Réglages de police</li>
-                                        </ul>
-                                    </div>
-                                    <div class="feature-group">
-                                        <h6>📖 Lecture</h6>
-                                        <ul>
-                                            <li>Police spéciale dyslexie</li>
-                                            <li>Guide de lecture</li>
-                                            <li>Mise en évidence des liens</li>
-                                        </ul>
-                                    </div>
-                                    <div class="feature-group">
-                                        <h6>🔊 Audio</h6>
-                                        <ul>
-                                            <li>Synthèse vocale</li>
-                                            <li>Lecture au survol</li>
-                                            <li>Réglage vitesse/volume</li>
-                                        </ul>
-                                    </div>
-                                    <div class="feature-group">
-                                        <h6>⌨️ Navigation</h6>
-                                        <ul>
-                                            <li>Curseur agrandi</li>
-                                            <li>Réduction animations</li>
-                                            <li>Focus clavier amélioré</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="keyboard-shortcuts">
-                                <h5>Raccourcis clavier intégrés</h5>
-                                <div class="shortcuts-grid">
-                                    <span class="shortcut"><kbd>Alt + A</kbd> Ouvrir/fermer le menu</span>
-                                    <span class="shortcut"><kbd>Alt + C</kbd> Contraste élevé</span>
-                                    <span class="shortcut"><kbd>Alt + D</kbd> Mode dyslexie</span>
-                                    <span class="shortcut"><kbd>Alt + S</kbd> Synthèse vocale</span>
-                                    <span class="shortcut"><kbd>Alt + M</kbd> Mode sombre/clair</span>
-                                    <span class="shortcut"><kbd>Alt + +/-</kbd> Taille du texte</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="component-card">
-                        <h4>📑 QuizPage.jsx</h4>
-                        <div class="component-details">
-                            <div class="component-role">
-                                <h5>Rôle</h5>
-                                <p>Cœur fonctionnel de l'application, gère l'ensemble du cycle de vie d'un quiz depuis la récupération des questions jusqu'à l'affichage des résultats.</p>
-                            </div>
-
-                            <div class="quiz-flow">
-                                <h5>Cycle du quiz</h5>
-                                <div class="flow-steps">
-                                    <div class="step">1. Écran d'accueil</div>
-                                    <div class="arrow">→</div>
-                                    <div class="step">2. Questions interactives</div>
-                                    <div class="arrow">→</div>
-                                    <div class="step">3. Gestion des réponses</div>
-                                    <div class="arrow">→</div>
-                                    <div class="step">4. Résultats détaillés</div>
-                                </div>
-                            </div>
-
-                            <div class="component-features">
-                                <h5>Fonctionnalités principales</h5>
-                                <ul>
-                                    <li>Récupération intelligente des données depuis l'API</li>
-                                    <li>Gestion des choix uniques et multiples</li>
-                                    <li>Progression en temps réel avec score</li>
-                                    <li>Résultats détaillés avec corrections</li>
-                                    <li>Actions post-quiz (recommencer, nouveau quiz, accueil)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="component-card">
-                        <h4>📑 AdminPage.jsx</h4>
-                        <div class="component-details">
-                            <div class="component-role">
-                                <h5>Rôle</h5>
-                                <p>Panneau d'administration centralisé offrant une interface complète pour la gestion de la plateforme.</p>
-                            </div>
-
-                            <div class="admin-features">
-                                <h5>Fonctionnalités principales</h5>
-                                <div class="admin-sections">
-                                    <div class="admin-section">
-                                        <h6>👤 Gestion des utilisateurs</h6>
-                                        <ul>
-                                            <li>Création avec rôles</li>
-                                            <li>Édition de profils</li>
-                                            <li>Suppression sécurisée</li>
-                                        </ul>
-                                    </div>
-                                    <div class="admin-section">
-                                        <h6>📚 Gestion des quiz</h6>
-                                        <ul>
-                                            <li>Création et édition</li>
-                                            <li>Duplication de quiz</li>
-                                            <li>Association de questions</li>
-                                        </ul>
-                                    </div>
-                                    <div class="admin-section">
-                                        <h6>❓ Gestion des questions</h6>
-                                        <ul>
-                                            <li>Création manuelle</li>
-                                            <li>Import de questions existantes</li>
-                                            <li>Filtrage et recherche</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Développement Back-end -->
-            <div id="dev-back" class="subsection">
-                <h3>Développement Back-end</h3>
-                
-                <div class="backend-section">
-                    <h4>Modèles Mongoose</h4>
-                    <div class="models-grid">
-                        <div class="model-card">
-                            <h5>👤 Modèle User</h5>
-                            <div class="model-structure">
-                                <h6>Structure :</h6>
-                                <ul>
-                                    <li><code>username</code> - nom d'utilisateur obligatoire</li>
-                                    <li><code>email</code> - unique et requis</li>
-                                    <li><code>password</code> - mot de passe hashé avec bcrypt</li>
-                                    <li><code>role</code> - "user" ou "admin"</li>
-                                    <li><code>isVerified</code> - validation email</li>
-                                    <li><code>resetToken</code> & <code>resetTokenExpiration</code></li>
-                                </ul>
-                                <h6>Méthodes :</h6>
-                                <ul>
-                                    <li><code>toPublicJSON()</code> - données publiques sans mot de passe</li>
-                                    <li><code>findByIdPublic(id)</code> - récupération sécurisée</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="model-card">
-                            <h5>📚 Modèle Quiz</h5>
-                            <div class="model-structure">
-                                <h6>Structure :</h6>
-                                <ul>
-                                    <li><code>title</code> - titre obligatoire</li>
-                                    <li><code>description</code> - optionnelle</li>
-                                    <li><code>category</code> - catégorie obligatoire</li>
-                                    <li><code>createdBy</code> - ID créateur</li>
-                                    <li><code>isAutoGenerated</code> - quiz automatique</li>
-                                    <li><code>questionsCount</code> - nombre de questions</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="model-card">
-                            <h5>❓ Modèle Question</h5>
-                            <div class="model-structure">
-                                <h6>Structure :</h6>
-                                <ul>
-                                    <li><code>question</code> - énoncé obligatoire</li>
-                                    <li><code>answers</code> - tableau de réponses (A, B, C)</li>
-                                    <li><code>correctAnswers</code> - bonnes réponses (multiples possibles)</li>
-                                    <li><code>category</code> - catégorie de la question</li>
-                                    <li><code>quizId</code> - référence optionnelle au quiz</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="backend-section">
-                    <h4>Middleware pour l'application</h4>
-                    <div class="middleware-grid">
-                        <div class="middleware-card">
-                            <h5>🔐 protect</h5>
-                            <p>Vérification JWT dans cookies ou headers, récupération des données utilisateur sécurisées.</p>
-                        </div>
-                        <div class="middleware-card">
-                            <h5>🛡️ authorize</h5>
-                            <p>Contrôle d'accès basé sur les rôles, restriction aux utilisateurs autorisés selon leur niveau de permission.</p>
-                        </div>
-                        <div class="middleware-card">
-                            <h5>🔓 optionalAuth</h5>
-                            <p>Authentification optionnelle pour routes mixtes, personnalisation selon statut de connexion.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="backend-section">
-                    <h4>Routes de l'application</h4>
-                    <div class="routes-overview">
-                        <div class="route-category">
-                            <h5>🔑 Routes d'authentification</h5>
-                            <p>Inscription, connexion, réinitialisation de mot de passe, vérification email. Accès public pour les fonctionnalités de base.</p>
-                        </div>
-                        <div class="route-category">
-                            <h5>📚 Routes Quiz</h5>
-                            <p>CRUD complet pour la gestion des quiz : création, lecture, modification, suppression, duplication.</p>
-                        </div>
-                        <div class="route-category">
-                            <h5>❓ Routes Questions</h5>
-                            <p>Gestion des questions avec association flexible aux quiz ou catégories, maintien de l'intégrité des données.</p>
-                        </div>
-                        <div class="route-category">
-                            <h5>👤 Routes Utilisateurs</h5>
-                            <p>Accès mixte : consultation pour tous les connectés, modification réservée aux administrateurs.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="backend-section">
-                    <h4>Fichier serveur principal (server.js)</h4>
-                    
-                    <div class="server-features">
-                        <div class="server-feature">
-                            <h5>🔒 Sécurité renforcée avec headers HTTP</h5>
-                            <div class="security-table">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Header</th>
-                                            <th>Rôle</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>X-Content-Type-Options: nosniff</td>
-                                            <td>Empêche le navigateur de deviner le type MIME</td>
-                                        </tr>
-                                        <tr>
-                                            <td>X-Frame-Options: DENY</td>
-                                            <td>Empêche l'affichage dans un iframe (clickjacking)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>X-XSS-Protection: 1; mode=block</td>
-                                            <td>Active la protection XSS du navigateur</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Referrer-Policy</td>
-                                            <td>Limite les informations transmises aux sites tiers</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Content-Security-Policy</td>
-                                            <td>Restreint les sources de scripts, styles, images</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="server-feature">
-                            <h5>⚡ Rate limiting (protection contre abus)</h5>
-                            <div class="rate-limits">
-                                <div class="limit-item">
-                                    <strong>Global :</strong> 100 requêtes / 15 min par IP
-                                </div>
-                                <div class="limit-item">
-                                    <strong>Auth :</strong> 10 tentatives / 15 min par IP
-                                </div>
-                                <div class="limit-item">
-                                    <strong>API :</strong> 50 requêtes / 15 min par IP
-                                </div>
-                                <div class="limit-item">
-                                    <strong>Admin :</strong> 200 requêtes / 15 min par IP
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="server-feature">
-                            <h5>🌐 CORS et gestion des origines</h5>
-                            <p>Acceptation uniquement des origines spécifiques (développement et production), gestion des credentials pour cookies sécurisés, rejet automatique des domaines non autorisés.</p>
-                        </div>
-
-                        <div class="server-feature">
-                            <h5>🛡️ Validation et logging</h5>
-                            <ul>
-                                <li>Protection contre l'accès aux fichiers sensibles (.env, .git, etc.)</li>
-                                <li>Limitation des payloads à 10MB</li>
-                                <li>Logging des requêtes avec timestamp, IP et user-agent</li>
-                                <li>Validation stricte côté serveur (ID MongoDB, pagination, rôles)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="request-flow">
-                        <h5>Flux complet d'une requête</h5>
-                        <div class="flow-diagram">
-                            <div class="flow-step">1. Requête entrante</div>
-                            <div class="flow-arrow">↓</div>
-                            <div class="flow-step">2. Headers sécurité + CORS</div>
-                            <div class="flow-arrow">↓</div>
-                            <div class="flow-step">3. Rate limiting</div>
-                            <div class="flow-arrow">↓</div>
-                            <div class="flow-step">4. Parsing & validation</div>
-                            <div class="flow-arrow">↓</div>
-                            <div class="flow-step">5. Auth & authorization</div>
-                            <div class="flow-arrow">↓</div>
-                            <div class="flow-step">6. Routing vers contrôleur</div>
-                            <div class="flow-arrow">↓</div>
-                            <div class="flow-step">7. Réponse JSON</div>
-                            <div class="flow-arrow">↓</div>
-                            <div class="flow-step">8. Logging & monitoring</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="gestion" class="subsection">
-                <h3>Gestion & Organisation</h3>
-                <div class="project-management">
-                    <p>Dans la phase de gestion et d'organisation du projet, j'ai mis en place une méthode basée sur des tableaux Kanban, pour suivre efficacement l'avancement des tâches et garder une vision claire de la progression.</p>
-                    
-                    <div class="management-flow">
-                        <div class="management-step">
-                            <h4>GitHub Projects</h4>
-                            <p>Utilisation initiale avec trois tableaux distincts (global, front-end, back-end), regroupant des issues correspondant aux fonctionnalités à développer.</p>
-                        </div>
-                        <div class="management-step">
-                            <h4>Migration vers Notion</h4>
-                            <p>Vue plus flexible et centralisée des tickets, tout en conservant une logique de suivi similaire.</p>
-                        </div>
-                        <div class="management-step">
-                            <h4>Approche MVP</h4>
-                            <p>Majorité des tickets concernant des éléments MVP, priorisation des fonctionnalités essentielles dès le départ.</p>
-                        </div>
-                        <div class="management-step">
-                            <h4>Développement itératif</h4>
-                            <p>Approche incrémentale : développement front puis implémentation back correspondante si nécessaire.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Résolution de problèmes -->
-    <section id="resolution-problemes" class="section bg-alternate">
-        <div class="container">
-            <h2>Résolution de problèmes</h2>
-            <p class="section-intro">Solutions mises en place pour les problèmes rencontrés lors du développement</p>
-            
-            <div id="probleme-1" class="subsection">
-                <div class="problem-card">
-                    <div class="problem-header">
-                        <span class="problem-icon">🔐</span>
-                        <h3>Problème 1 : Protection des routes administrateur</h3>
-                    </div>
-                    
-                    <div class="problem-content">
-                        <div class="problem-section">
-                            <h4>Description du problème</h4>
-                            <p>Affichage de la page admin accessible directement via l'URL <code>/admin</code> sans vérification des permissions utilisateur.</p>
-                        </div>
-                        
-                        <div class="problem-section solution">
-                            <h4>Solution mise en place</h4>
-                            <p>Implémentation d'un composant <strong>ProtectedRoutes</strong> pour sécuriser l'accès aux pages sensibles.</p>
-                            
-                            <div class="solution-features">
-                                <h5>Fonctionnalités du composant :</h5>
-                                <ul>
-                                    <li>Vérification de l'authentification via l'API <code>/api/profil</code></li>
-                                    <li>Gestion des états de chargement et d'erreur</li>
-                                    <li>Redirection automatique vers <code>/login</code> si non authentifié</li>
-                                    <li>Contrôle des rôles utilisateur (requiredRole)</li>
-                                    <li>Affichage d'un message d'accès refusé si permissions insuffisantes</li>
-                                    <li>Utilisation des <code>credentials: 'include'</code> pour la gestion des cookies</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="code-block">
-                                <h5>Code implémenté :</h5>
-                                <pre><code>// ProtectedRoutes.jsx
-import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
-
-const ProtectedRoute = ({ children, requiredRole }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/api/profil', {
-          credentials: 'include',
-        });
-        
-        if (response.ok) {
-          const res = await response.json();
-          if (res && res.data && res.data.user) {
-            setUser(res.data.user);
-          } else {
-            throw new Error("Structure de réponse inattendue");
-          }
-        } else if (response.status === 401) {
-          setUser(null);
-        } else {
-          throw new Error(`Erreur serveur: ${response.status}`);
-        }
-      } catch (err) {
-        setError(err.message);
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    
-    checkAuth();
-  }, []);
-
-  if (loading) return &lt;div&gt;Vérification des permissions...&lt;/div&gt;;
-  if (error) return &lt;div&gt;Erreur: {error}&lt;/div&gt;;
-  if (!user) return &lt;Navigate to="/login" replace /&gt;;
-  
-  if (requiredRole && user.role !== requiredRole) {
-    return &lt;div&gt;Accès refusé - Rôle requis: {requiredRole}&lt;/div&gt;;
-  }
-  
-  return children;
-};
-
-export default ProtectedRoute;</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="probleme-2" class="subsection">
-                <div class="problem-card">
-                    <div class="problem-header">
-                        <span class="problem-icon">🔑</span>
-                        <h3>Problème 2 : Sécurité des tokens de réinitialisation de mot de passe</h3>
-                    </div>
-                    
-                    <div class="problem-content">
-                        <div class="problem-section">
-                            <h4>Description du problème</h4>
-                            <p>Gestion sécurisée des tokens de réinitialisation de mot de passe avec hashage et vérification appropriés.</p>
-                        </div>
-                        
-                        <div class="problem-section solution">
-                            <h4>Solution mise en place</h4>
-                            <p>Système de tokens sécurisé avec génération aléatoire, hashage en base de données et comparaison sécurisée.</p>
-                            
-                            <div class="solution-architecture">
-                                <h5>Architecture de la solution :</h5>
-                                <ol>
-                                    <li><strong>Génération du token</strong> : Token généré de façon aléatoirement sécurisée</li>
-                                    <li><strong>Stockage en base</strong> : Le token est hashé avant d'être stocké en base de données</li>
-                                    <li><strong>Lien de réinitialisation</strong> : Le lien contient le token non-hashé pour la vérification</li>
-                                    <li><strong>Vérification</strong> : Comparaison entre le token fourni et le hash stocké</li>
-                                </ol>
-                            </div>
-                            
-                            <div class="solution-process">
-                                <h5>Processus de fonctionnement :</h5>
-                                <div class="process-flow">
-                                    <div class="process-step">
-                                        <span class="step-number">1</span>
-                                        <p>L'utilisateur demande une réinitialisation de mot de passe</p>
-                                    </div>
-                                    <div class="process-arrow">↓</div>
-                                    <div class="process-step">
-                                        <span class="step-number">2</span>
-                                        <p>Le serveur génère un token aléatoire sécurisé</p>
-                                    </div>
-                                    <div class="process-arrow">↓</div>
-                                    <div class="process-step">
-                                        <span class="step-number">3</span>
-                                        <p>Le token est hashé et stocké en base de données</p>
-                                    </div>
-                                    <div class="process-arrow">↓</div>
-                                    <div class="process-step">
-                                        <span class="step-number">4</span>
-                                        <p>Un lien avec le token non-hashé est envoyé par email</p>
-                                    </div>
-                                    <div class="process-arrow">↓</div>
-                                    <div class="process-step">
-                                        <span class="step-number">5</span>
-                                        <p>Lors de l'utilisation du lien, le token fourni est comparé au hash</p>
-                                    </div>
-                                    <div class="process-arrow">↓</div>
-                                    <div class="process-step">
-                                        <span class="step-number">6</span>
-                                        <p>Si la vérification réussit, l'utilisateur peut réinitialiser son mot de passe</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="solution-advantages">
-                                <h5>Avantages de cette approche :</h5>
-                                <ul>
-                                    <li>Sécurité renforcée : les tokens ne sont jamais stockés en clair</li>
-                                    <li>Protection contre les fuites de données</li>
-                                    <li>Tokens à usage unique et limités dans le temps</li>
-                                    <li>Impossibilité de deviner ou reproduire les tokens</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="resume" class="subsection">
-                <h3>📋 Résumé des solutions</h3>
-                <div class="summary-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Problème</th>
-                                <th>Solution</th>
-                                <th>Statut</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Accès direct aux routes admin</td>
-                                <td>Composant ProtectedRoutes avec vérification d'authentification et de rôles</td>
-                                <td><span class="status-resolved">✅ Résolu</span></td>
-                            </tr>
-                            <tr>
-                                <td>Sécurité des tokens de réinitialisation</td>
-                                <td>Système de hashage et comparaison sécurisée des tokens</td>
-                                <td><span class="status-resolved">✅ Résolu</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="technical-points">
-                <h3>🔧 Points techniques importants</h3>
-                
-                <div class="tech-points-grid">
-                    <div class="tech-point-card">
-                        <h4>ProtectedRoutes</h4>
-                        <ul>
-                            <li>Utilisation de <code>credentials: 'include'</code> pour les cookies d'authentification</li>
-                            <li>Gestion des états de chargement pour une meilleure UX</li>
-                            <li>Gestion des erreurs réseau et serveur</li>
-                            <li>Logs détaillés pour le debugging</li>
-                            <li>Redirection automatique avec <code>replace</code> pour éviter l'historique</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-point-card">
-                        <h4>Tokens de réinitialisation</h4>
-                        <ul>
-                            <li>Génération cryptographiquement sécurisée</li>
-                            <li>Hashage avec algorithme sécurisé (bcrypt recommandé)</li>
-                            <li>Durée de vie limitée des tokens</li>
-                            <li>Invalidation après utilisation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Conclusion -->
-    <section id="conclusion" class="section">
-        <div class="container">
-            <h2>Conclusion</h2>
-            
-            <div id="bilan" class="subsection">
-                <h3>Bilan du développement</h3>
-                <div class="project-summary">
-                    <div class="summary-stats">
-                        <div class="stat-card">
-                            <span class="stat-number">85%</span>
-                            <span class="stat-label">Taux d'achèvement</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">MVP</span>
-                            <span class="stat-label">Fonctionnel</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">Full-Stack</span>
-                            <span class="stat-label">Architecture moderne</span>
-                        </div>
-                    </div>
-                    <p>Le projet Aléa représente l'aboutissement d'une démarche de développement full-stack moderne, alliant maîtrise technique et vision produit. L'application démontre une architecture robuste couvrant l'ensemble de la chaîne de développement web.</p>
-                </div>
-            </div>
-
-            <div id="points-forts" class="subsection">
-                <h3>Points forts du projet</h3>
-                <div class="strengths-grid">
-                    <div class="strength-card">
-                        <h4>🏗️ Architecture technique solide</h4>
-                        <p>Stack technologique moderne (React 18, Node.js, Express, MongoDB) avec architecture MVC bien définie. Sécurisation JWT, middleware de protection et validation des données.</p>
-                    </div>
-                    
-                    <div class="strength-card highlight">
-                        <h4>♿ Expérience utilisateur différenciante</h4>
-                        <p>Menu d'accessibilité complet avec mode contraste, police dyslexie, synthèse vocale, raccourcis clavier. Approche inclusive touchant un public large.</p>
-                    </div>
-                    
-                    <div class="strength-card">
-                        <h4>🛠️ Système d'administration complet</h4>
-                        <p>Gestion centralisée et granulaire : utilisateurs avec rôles, création/édition de quiz, réutilisation de questions. Contrôle total sur contenu et accès.</p>
-                    </div>
-                    
-                    <div class="strength-card">
-                        <h4>🔒 Sécurité renforcée</h4>
-                        <p>Headers HTTP sécurisés, rate limiting multi-niveaux, protection CORS, validation stricte. Protection efficace contre attaques courantes (XSS, CSRF, injection, DoS).</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="evolutions" class="subsection">
-                <h3>Évolutions et perspectives</h3>
-                
-                <div class="evolution-timeline">
-                    <div class="timeline-section">
-                        <h4>📈 Fonctionnalités avancées à court terme</h4>
-                        <ul class="evolution-list">
-                            <li>Système de catégories étendues avec filtrage intelligent</li>
-                            <li>Mode multijoueur temps réel avec WebSockets</li>
-                            <li>Génération automatique de quiz basée sur l'IA</li>
-                            <li>Analytics utilisateur et tableaux de bord de performance</li>
-                            <li>Système de badges et gamification</li>
-                            <li>Export/import de quiz aux formats standardisés</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-section">
-                        <h4>⚡ Scalabilité technique</h4>
-                        <ul class="evolution-list">
-                            <li>Containerisation Docker avec orchestration Kubernetes</li>
-                            <li>Pipeline CI/CD avec tests automatisés</li>
-                            <li>Mise en cache Redis pour optimiser les performances</li>
-                            <li>CDN pour distribution des ressources statiques</li>
-                            <li>Architecture microservices pour gestion de charge</li>
-                            <li>Base de données distribuée avec réplication</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-section">
-                        <h4>💼 Développement commercial</h4>
-                        <ul class="evolution-list">
-                            <li>Modèle SaaS multi-tenant avec personnalisation</li>
-                            <li>API publique avec système de quotas</li>
-                            <li>Intégrations LMS existants</li>
-                            <li>Version mobile native avec synchronisation offline</li>
-                            <li>Marketplace de quiz communautaire</li>
-                            <li>Système de monétisation par abonnements premium</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-section">
-                        <h4>🤖 Intelligence artificielle et ML</h4>
-                        <ul class="evolution-list">
-                            <li>Recommandations personnalisées basées sur l'historique</li>
-                            <li>Génération automatique de questions depuis contenus externes</li>
-                            <li>Analyse prédictive des performances d'apprentissage</li>
-                            <li>Adaptation dynamique de la difficulté selon niveau</li>
-                            <li>Détection automatique de plagiat et contenu inapproprié</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="final-conclusion">
-                <h3>Conclusion générale</h3>
-                <div class="conclusion-content">
-                    <p>Le projet Aléa illustre la capacité à concevoir et développer une application web complète, sécurisée et accessible, en respectant les standards professionnels du développement moderne. L'architecture mise en place, la qualité du code produit et l'attention portée à l'expérience utilisateur démontrent une maîtrise technique solide et une vision produit claire.</p>
-                    
-                    <p>L'application est d'ores et déjà prête pour une mise en production et dispose d'un potentiel d'évolution important, tant sur le plan technique que fonctionnel. La base architecturale robuste et l'approche modulaire facilitent l'intégration de nouvelles fonctionnalités et l'adaptation aux besoins futurs du marché.</p>
-                    
-                    <p>Ce projet représente ainsi un tremplin vers des développements plus ambitieux, tout en constituant une démonstration concrète des compétences acquises dans le cadre de la formation <strong>Développeur Web et Web Mobile</strong>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Aléa</h3>
-                    <p>Projet réalisé par Ichem DGHIM</p>
-                    <p>Dans le cadre du Titre Professionnel Développeur Web et Web Mobile</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Technologies utilisées</h4>
-                    <div class="tech-badges">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Express</span>
-                        <span class="tech-badge">MongoDB</span>
-                        <span class="tech-badge">JWT</span>
-                        <span class="tech-badge">Mongoose</span>
-                    </div>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>Développeur Web Junior</p>
-                    <p>Basé à Agen, France</p>
-                    <p>Formation AFEC</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ichem DGHIM - Tous droits réservés</p>
-                <p>Document de présentation - Titre Professionnel Développeur Web et Web Mobile</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script>
+  // Reveal on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
